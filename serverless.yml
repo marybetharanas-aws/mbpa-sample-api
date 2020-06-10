@@ -1,0 +1,15 @@
+service: mbpa-sample-api
+
+provider:
+ name: aws
+ runtime: nodejs6.10
+ stage: dev
+r egion: us-east-1
+
+
+functions:
+ app:
+  handler: index.handler
+  events:
+  - http: ANY /
+  - http: 'ANY {proxy+}'
